@@ -43,13 +43,13 @@ function App() {
               <Home />
               <About />
               <Skills />
+              <Projects />
+              <ProfileStats />
               <Contact />
             </>
           }
         />
         <Route path="/resume" element={<Resume />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/dsa" element={<ProfileStats />} />
       </Routes>
       <Footer />
     </Router>

@@ -72,7 +72,7 @@ export default function ProfileStats() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6">
+    <div id='dsa' className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6">
       <div className="bg-white shadow-xl rounded-2xl p-6 mb-8 text-center w-full max-w-md">
         <h1 className="text-3xl font-bold text-gray-800">User: {data.username}</h1>
       </div>

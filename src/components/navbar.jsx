@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom';
 const initialNavigation = [
   { name: 'Home', href: '/', current: true },
   { name: 'About', href: '/#about', current: false },
-  { name: 'Projects', href: '/projects', current: false },
+  { name: 'Projects', href: '/#projects', current: false },
   { name: 'Skills', href: '/#skills', current: false },
-  { name: 'DSA/CP', href: '/dsa', current: false },
+  { name: 'DSA/CP', href: '/#dsa', current: false },
   { name: 'Resume', href: '/resume', current: false },
   { name: 'Contact', href: '/#contact', current: false },
 ];
