@@ -1,7 +1,7 @@
 import React from "react";
 import { FaGithub, FaLinkedinIn, FaAt } from "react-icons/fa";
 import "../App.css";
-import homegif from "../assets/Home-gif.gif";
+import homegif from "/assets/Home-gif.gif";
 
 const Home = () => {
   return (

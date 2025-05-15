@@ -1,6 +1,6 @@
-import pro1 from '../assets/pro-1.png';
-import pro2 from '../assets/pro-2.jpg';
-import pro3 from '../assets/pro-3.jpg';
+import pro1 from '/assets/pro-1.png';
+import pro2 from '/assets/pro-2.jpg';
+import pro3 from '/assets/pro-3.jpg';
 
 const projectsData = [
   {

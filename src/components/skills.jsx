@@ -29,9 +29,9 @@ import {
 export default function Skills() {
   const sectionClasses = "mb-12";
   const titleClasses =
-    "title-font font-bold text-sm tracking-widest mb-6 text-left"; // Increased font size
+    "title-font font-bold text-sm tracking-widest mb-6 text-left"; 
   const gridClasses = "grid grid-cols-4 gap-y-6 gap-x-10 justify-items-center";
-  const itemClasses = "flex flex-col items-center text-sm"; // Increased font size
+  const itemClasses = "flex flex-col items-center text-sm"; 
 
   const usingNow = [
     { name: "HTML5", icon: <FaHtml5 size={48} /> },

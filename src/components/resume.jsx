@@ -9,7 +9,7 @@ export default function Resume() {
 
         <div className="mb-10 relative mt-6">
           <iframe
-            src="../src/assets/resume.pdf"  
+            src="/assets/resume.pdf"  
             width="100%"
             height="800px"
             className="border-0 w-full h-[800px] sm:h-[900px] lg:h-[1000px]"
@@ -19,7 +19,7 @@ export default function Resume() {
 
         <div className="text-center mt-10">
           <a
-            href="../src/assets/resume.pdf" 
+            href="/assets/resume.pdf" 
             download="Ritesh's resume.pdf"
             className="bg-gray-900 text-white py-2 px-4 rounded-md hover:bg-gray-700 transition duration-300"
           >
