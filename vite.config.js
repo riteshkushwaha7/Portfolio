@@ -4,17 +4,15 @@ import tailwindcss from '@tailwindcss/vite'
 import { copyFileSync } from 'fs'
 
 export default defineConfig({
-  base: '/',
+  base: '/', 
   plugins: [
-    tailwindcss(),
     react(),
+    tailwindcss(),
     {
       name: 'copy-redirects',
       closeBundle() {
-        console.log('Copying _redirects file now...')
         copyFileSync('public/_redirects', 'dist/_redirects')
       }
     }
-  ]
-});
-
+  ],
+})
