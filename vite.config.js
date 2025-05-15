@@ -10,6 +10,7 @@ export default defineConfig({
     {
       name: 'copy-redirects',
       closeBundle() {
+        console.log('Copying _redirects file now...')
         copyFileSync('public/_redirects', 'dist/_redirects')
       }
     }
