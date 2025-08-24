@@ -1,8 +1,19 @@
 import pro1 from '/assets/pro-1.png';
 import pro2 from '/assets/pro-2.jpg';
 import pro3 from '/assets/pro-3.jpg';
+import pro4 from '/assets/pro-4.jpg';
 
 const projectsData = [
+  {
+    id: 3,
+    image: pro4, 
+    demoLink: "/",
+    githubRepo: "https://github.com/riteshkushwaha7/Default-predictor",
+    title: "Loan default predictor",
+    creationDate: "August 2025",
+    features: "Accuracy of 88.57 %, with AUC of 0.831",
+    technologies: "Python, Pandas, NumPy, Scikit-Learn, XGBoost"
+  },
   {
     id: 1,
     image: pro1,
@@ -22,16 +33,6 @@ const projectsData = [
     creationDate: "March 2025",
     features: "ShortURL Generate, QR Code Generate, User Authentication, Session Management",
     technologies: "JavaScript, MongoDB, EJS, Node.js, bycryptjs, jwt, cookie-parser"
-  },
-  {
-    id: 3,
-    image: pro3, 
-    demoLink: "/",
-    githubRepo: "https://github.com/riteshkushwaha497/Frontend-projects/tree/main/Memory_Game",
-    title: "Memory Game",
-    creationDate: "March 2024",
-    features: "Fun, Interactive, Brain-Training",
-    technologies: "Javascript, CSS, HTML"
   },
 ];
 
