@@ -7,9 +7,9 @@ const projectsData = [
   {
     id: 3,
     image: pro4, 
-    demoLink: "/",
+    demoLink: "https://loan-default-risk-model.streamlit.app/",
     githubRepo: "https://github.com/riteshkushwaha7/Default-predictor",
-    title: "Loan default predictor",
+    title: "Loan Default Risk Predictor Webapp",
     creationDate: "August 2025",
     features: "Accuracy of 88.57 %, with AUC of 0.831",
     technologies: "Python, Pandas, NumPy, Scikit-Learn, XGBoost"
