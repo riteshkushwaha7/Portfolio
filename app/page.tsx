@@ -17,7 +17,7 @@ export default function Home() {
               Software Engineer | MERN Developer | ML Developer
             </p>
             <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed max-w-lg">
-              I'm a passionate Web Developer currently pursuing B.Tech in Information Technology 
+              I&apos;m a passionate Web Developer currently pursuing B.Tech in Information Technology 
               at the University Institute of Technology UIT RGPV Bhopal, graduating in 2027. 
               With hands-on experience in full-stack development, I focus on creating dynamic, 
               scalable web solutions that deliver great user experiences.

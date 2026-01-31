@@ -1,7 +1,7 @@
 # Portfolio - Next.js
 
-My Portfolio 
-Latest Updated on : 01 Feb 2026
+My Portfolio, 
+Last Updated on : 01 Feb 2026
 
 ## Features
 

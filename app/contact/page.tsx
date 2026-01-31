@@ -50,7 +50,7 @@ export default function Contact() {
           <h2 className="inline-block font-bold text-black dark:text-white text-2xl md:text-3xl tracking-widest border-2 border-black dark:border-white px-8 py-2 mb-6 uppercase">
             Contact Me
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400">I'd love to hear from you.</p>
+          <p className="text-lg text-gray-600 dark:text-gray-400">I&apos;d love to hear from you.</p>
         </div>
 
         <form onSubmit={handleSubmit} className="mt-16 space-y-6">
@@ -168,7 +168,7 @@ export default function Contact() {
               type="submit"
               className="block w-full rounded-md bg-gray-900 dark:bg-white px-3.5 py-2.5 text-center text-sm font-semibold text-white dark:text-gray-900 hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors focus:outline-none"
             >
-              Let's talk
+              Let&apos;s talk
             </button>
           </div>
         </form>

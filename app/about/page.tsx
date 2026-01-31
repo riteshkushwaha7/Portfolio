@@ -57,11 +57,11 @@ export default function About() {
             </h2>
             <div className="max-w-3xl">
               <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                I'm Ritesh Kushwaha, a passionate Web Developer currently pursuing
+                I&apos;m Ritesh Kushwaha, a passionate Web Developer currently pursuing
                 B.Tech in Information Technology at the University Institute of
                 Technology UIT RGPV Bhopal, graduating in 2027. With hands-on
                 experience in full-stack development, I focus on creating dynamic,
-                scalable web solutions that deliver great user experiences. I'm
+                scalable web solutions that deliver great user experiences. I&apos;m
                 dedicated to continuous learning, always staying up-to-date with the
                 latest tech trends and best practices.
               </p>
