@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -16,6 +16,7 @@ const navigation = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const theme = localStorage.getItem('theme') || 'light';
@@ -38,12 +39,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 z-50">
+    <nav className="fixed top-0 w-full bg-white/95 dark:bg-gray-900/95 border-b border-gray-200 dark:border-gray-700 backdrop-blur z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="h-10 w-10 rounded-full bg-gray-900 dark:bg-white flex items-center justify-center">
+              <div className="h-10 w-10 rounded-full bg-gray-900 dark:bg-white flex items-center justify-center shadow-sm">
                 <span className="text-white dark:text-gray-900 font-bold text-sm">RK</span>
               </div>
             </Link>
@@ -55,7 +56,11 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="px-4 py-2 text-sm font-medium text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors"
+                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                  pathname === item.href
+                    ? 'bg-gray-900 text-white dark:bg-white dark:text-gray-900'
+                    : 'text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
+                }`}
               >
                 {item.name}
               </Link>
@@ -123,7 +128,11 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-2 text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+                className={`block px-3 py-2 text-base font-medium rounded-md ${
+                  pathname === item.href
+                    ? 'bg-gray-900 text-white dark:bg-white dark:text-gray-900'
+                    : 'text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800'
+                }`}
               >
                 {item.name}
               </Link>

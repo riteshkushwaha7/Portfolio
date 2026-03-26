@@ -17,7 +17,7 @@ export default function Contact() {
 
     const object = {
       subject: "New Contact Form Submission from your Website",
-      from_name: formData.get("first-name") + " " + formData.get("last-name"),
+      from_name: `${formData.get("first-name")} ${formData.get("last-name")}`,
     };
     formData.append("object", JSON.stringify(object));
 
@@ -32,12 +32,12 @@ export default function Contact() {
       if (result.success) {
         setSubmissionStatus('success');
         setSubmissionMessage(result.message || "Form submitted successfully!");
-        (event.target as HTMLFormElement).reset();
+        event.currentTarget.reset();
       } else {
         setSubmissionStatus('error');
         setSubmissionMessage(result.message || "An error occurred. Please try again.");
       }
-    } catch (error) {
+    } catch {
       setSubmissionStatus('error');
       setSubmissionMessage("An unexpected error occurred. Please check your connection and try again.");
     }
@@ -53,7 +53,7 @@ export default function Contact() {
           <p className="text-lg text-gray-600 dark:text-gray-400">I&apos;d love to hear from you.</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="mt-16 space-y-6">
+        <form onSubmit={handleSubmit} className="mt-16 space-y-6 soft-card p-6 sm:p-8">
           <input type="hidden" name="access_key" value={web3FormsAccessKey} />
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -166,7 +166,7 @@ export default function Contact() {
           <div>
             <button
               type="submit"
-              className="block w-full rounded-md bg-gray-900 dark:bg-white px-3.5 py-2.5 text-center text-sm font-semibold text-white dark:text-gray-900 hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors focus:outline-none"
+              className="block w-full rounded-md bg-gray-900 dark:bg-white px-3.5 py-2.5 text-center text-sm font-semibold text-white dark:text-gray-900 hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors focus:outline-none shadow-sm"
             >
               Let&apos;s talk
             </button>
@@ -176,4 +176,3 @@ export default function Contact() {
     </div>
   );
 }
-

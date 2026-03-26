@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
-
 :root {
   --background: #ffffff;
   --foreground: #000000;
@@ -21,7 +18,9 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background:
+    radial-gradient(circle at top center, rgba(229, 231, 235, 0.55), transparent 35%),
+    var(--background);
   font-family: var(--font-inter);
 }
 
@@ -36,6 +35,14 @@ body {
   
   .animate-slide-up {
     animation: slideUp 0.6s ease-out;
+  }
+
+  .soft-card {
+    @apply rounded-xl border border-gray-200/80 bg-white shadow-sm transition-all dark:border-gray-700 dark:bg-gray-800;
+  }
+
+  .soft-card-hover {
+    @apply hover:-translate-y-0.5 hover:shadow-md;
   }
 }
 

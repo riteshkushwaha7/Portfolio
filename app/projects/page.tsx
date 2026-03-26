@@ -1,30 +1,50 @@
 const projectsData = [
   {
+    id: 4,
+    demoLink: null,
+    githubRepo: "https://github.com/riteshkushwaha7/herblink",
+    title: "HerbLink",
+    dateRange: "Oct 2025 - Dec 2025",
+    features:
+      "Built as a herbal supply-chain traceability platform connecting farmers, labs, processors, and manufacturers with role-based workflows, verification flows, and inventory movement tracking.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Zustand", "Leaflet", "Express.js", "Prisma", "PostgreSQL", "Twilio"],
+  },
+  {
+    id: 5,
+    demoLink: "https://github.com/riteshkushwaha7/PaisaTrace",
+    githubRepo: "https://github.com/riteshkushwaha7/PaisaTrace",
+    title: "PaisaTrace",
+    dateRange: "Mar 2026",
+    features:
+      "Vibe-coded for the UBI Idea 2.0 hackathon as a banking fraud monitoring prototype with fraud alerts, fund-flow graph tracing, anomaly scoring, explainability panels, investigator workflow, and report-style evidence views.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "FastAPI", "Python", "NetworkX", "Pandas", "scikit-learn", "Recharts", "Cytoscape.js"],
+  },
+  {
     id: 3,
     demoLink: "https://loan-default-risk-model.streamlit.app/",
     githubRepo: "https://github.com/riteshkushwaha7/Default-predictor",
     title: "Loan Default Risk Predictor Webapp",
-    creationDate: "August 2025",
+    dateRange: "Aug 2025",
     features: "Accuracy of 88.57 %, with AUC of 0.831",
-    technologies: "Python, Pandas, NumPy, Scikit-Learn, XGBoost"
+    technologies: ["Python", "Pandas", "NumPy", "Scikit-Learn", "XGBoost"],
   },
   {
     id: 1,
     demoLink: "https://swasth-verify.vercel.app/",
     githubRepo: "https://github.com/riteshkushwaha7/SwasthVerify-main",
     title: "Swasth Verify - Harmful Chemical Detector",
-    creationDate: "April 2025",
+    dateRange: "Apr 2025",
     features: "Detect Harmful Chemicals, LLM Response, Report Generator, OCR Technology",
-    technologies: "React, Node.js, Tailwind CSS, Express.js, Tesseract-OCR, MongoDB"
+    technologies: ["React", "Node.js", "Tailwind CSS", "Express.js", "Tesseract-OCR", "MongoDB"],
   },
   {
     id: 2,
     demoLink: "https://www.linkedin.com/posts/riteshkushwaha7_mern-shorturl-backenddevelopment-activity-7309170217618673664-9WUR",
     githubRepo: "https://github.com/riteshkushwaha7/Trimly",
     title: "Trimly - URL Shortener & QR Code Generator",
-    creationDate: "March 2025",
+    dateRange: "Mar 2025",
     features: "ShortURL Generate, QR Code Generate, User Authentication, Session Management",
-    technologies: "JavaScript, MongoDB, EJS, Node.js, bycryptjs, jwt, cookie-parser"
+    technologies: ["JavaScript", "MongoDB", "EJS", "Node.js", "bcryptjs", "JWT", "cookie-parser"],
   },
 ];
 
@@ -42,11 +62,11 @@ export default function Projects() {
           {projectsData.map((project) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-lg transition-shadow overflow-hidden flex flex-col"
+              className="soft-card soft-card-hover overflow-hidden flex flex-col"
             >
               <div className="p-6 flex-grow">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{project.creationDate}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{project.dateRange}</p>
 
                 <div className="space-y-4 mb-6">
                   <div>
@@ -57,23 +77,32 @@ export default function Projects() {
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">Technologies:</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                      {project.technologies}
-                    </p>
+                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Tech Stack:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div className="flex justify-center gap-4 p-5 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
-                <a
-                  href={project.demoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors"
-                >
-                  Demo
-                </a>
+                {project.demoLink && (
+                  <a
+                    href={project.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-medium rounded-md hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors shadow-sm"
+                  >
+                    Demo
+                  </a>
+                )}
                 <a
                   href={project.githubRepo}
                   target="_blank"
@@ -90,4 +119,3 @@ export default function Projects() {
     </div>
   );
 }
-

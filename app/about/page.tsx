@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import CertificateModal from '@/components/CertificateModal';
 
-// Certificate data mapped from filenames
 const certificates = [
   {
     filename: 'sih-certificate.jpeg',
@@ -23,7 +22,7 @@ const certificates = [
 const achievements = [
   {
     title: 'Smart India Hackathon FINALIST',
-    description: 'SIH2025',
+    description: 'SIH 2025',
   },
   {
     title: 'LeetCode',
@@ -31,11 +30,36 @@ const achievements = [
   },
   {
     title: 'Codeforces',
-    description: 'Pupils Division, Max Rating: 1242',
+    description: 'Pupil Division, Max Rating: 1242',
   },
   {
     title: '3X Hackathon Finalist',
-    description: 'TechkirtiIIT Kanpur Techkriti’25 , NIT KKR InnokShetra’24, SIH2025',
+    description: 'Techkriti IIT Kanpur 2025, NIT KKR InnokShetra 2024, SIH 2025',
+  },
+];
+
+const experience = [
+  {
+    role: 'Full Stack Developer Intern',
+    company: 'BoostExpo',
+    duration: 'Mar 2026 - Present',
+    note: 'Expected till June 2026',
+    points: [
+      'Developing and maintaining boostexpo.com with focus on user experience and functionality.',
+      'Collaborating with the team to identify and fix bugs for a smoother cooking event booking process.',
+      'Gaining hands-on experience across both frontend and backend development.',
+    ],
+  },
+  {
+    role: 'ERPNext Technical Intern',
+    company: 'Scented Slogan',
+    duration: 'Feb 2026 - Present',
+    note: 'Expected till April 2026',
+    points: [
+      'Managing the ERPNext platform by resolving bugs and feature issues.',
+      'Developing automation flows to streamline internal workflows and improve efficiency.',
+      'Contributing to maintenance of the company website built with low-code tools.',
+    ],
   },
 ];
 
@@ -50,30 +74,74 @@ export default function About() {
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="space-y-20">
-          {/* 1. About Me Section */}
           <section>
             <h2 className="inline-block font-bold text-black dark:text-white text-2xl md:text-3xl tracking-widest border-2 border-black dark:border-white px-8 py-2 mb-8 uppercase">
               About Me
             </h2>
-            <div className="max-w-3xl">
+            <div className="max-w-3xl flex flex-col sm:flex-row items-start gap-6">
+              <div className="relative h-24 w-24 overflow-hidden rounded-2xl border-2 border-gray-200 shadow-sm dark:border-gray-700 shrink-0">
+                <Image
+                  src="/assets/photo.jpeg"
+                  alt="Ritesh Kushwaha"
+                  fill
+                  className="object-cover"
+                  sizes="96px"
+                />
+              </div>
               <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 I&apos;m Ritesh Kushwaha, a passionate Web Developer currently pursuing
                 B.Tech in Information Technology at the University Institute of
                 Technology UIT RGPV Bhopal, graduating in 2027. With hands-on
                 experience in full-stack development, I focus on creating dynamic,
                 scalable web solutions that deliver great user experiences. I&apos;m
-                dedicated to continuous learning, always staying up-to-date with the
-                latest tech trends and best practices.
+                dedicated to continuous learning and improving products with clean,
+                practical solutions.
               </p>
             </div>
           </section>
 
-          {/* 2. Education Section */}
+          <section>
+            <h2 className="inline-block font-bold text-black dark:text-white text-2xl md:text-3xl tracking-widest border-2 border-black dark:border-white px-8 py-2 mb-8 uppercase">
+              Experience
+            </h2>
+            <div className="max-w-4xl space-y-6">
+              {experience.map((item) => (
+                <div
+                  key={item.company}
+                  className="soft-card soft-card-hover p-6"
+                >
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                        {item.role}
+                      </h3>
+                      <p className="text-base font-medium text-gray-700 dark:text-gray-300">
+                        {item.company}
+                      </p>
+                    </div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 sm:text-right">
+                      <p>{item.duration}</p>
+                      <p className="font-medium">{item.note}</p>
+                    </div>
+                  </div>
+                  <ul className="mt-4 space-y-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    {item.points.map((point) => (
+                      <li key={point} className="flex gap-2">
+                        <span className="mt-1.5 h-2 w-2 rounded-full bg-gray-900 dark:bg-white" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+
           <section>
             <h2 className="inline-block font-bold text-black dark:text-white text-2xl md:text-3xl tracking-widest border-2 border-black dark:border-white px-8 py-2 mb-8 uppercase">
               Education
             </h2>
-            <div className="max-w-3xl">
+            <div className="max-w-3xl space-y-8">
               <div className="border-l-2 border-gray-900 dark:border-white pl-6 space-y-1">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                   B.Tech in Information Technology
@@ -85,9 +153,7 @@ export default function About() {
                   Expected Graduation: 2027
                 </p>
               </div>
-            </div>
-            <br />
-            <div className="max-w-3xl">
+
               <div className="border-l-2 border-gray-900 dark:border-white pl-6 space-y-1">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                   Intermediate in PCM and Information Practice
@@ -102,15 +168,12 @@ export default function About() {
             </div>
           </section>
 
-          {/* 3. DSA Portfolio Section */}
           <section>
             <h2 className="inline-block font-bold text-black dark:text-white text-2xl md:text-3xl tracking-widest border-2 border-black dark:border-white px-8 py-2 mb-8 uppercase">
               DSA Portfolio
             </h2>
             <div className="max-w-3xl space-y-4">
-              <div
-                className="border-2 border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-white dark:bg-gray-800 hover:border-gray-900 dark:hover:border-white transition-colors flex flex-col sm:flex-row items-start sm:items-center gap-4"
-              >
+              <div className="soft-card soft-card-hover p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
                     Solved 900+ DSA Questions
@@ -131,7 +194,6 @@ export default function About() {
             </div>
           </section>
 
-          {/* 4. Achievements Section */}
           <section>
             <h2 className="inline-block font-bold text-black dark:text-white text-2xl md:text-3xl tracking-widest border-2 border-black dark:border-white px-8 py-2 mb-8 uppercase">
               Achievements
@@ -140,7 +202,7 @@ export default function About() {
               {achievements.map((achievement, index) => (
                 <div
                   key={index}
-                  className="border-2 border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-white dark:bg-gray-800 hover:border-gray-900 dark:hover:border-white transition-colors"
+                  className="soft-card soft-card-hover p-4"
                 >
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
                     {achievement.title}
@@ -155,7 +217,6 @@ export default function About() {
             </div>
           </section>
 
-          {/* 5. Courses & Certifications Section */}
           <section>
             <h2 className="inline-block font-bold text-black dark:text-white text-2xl md:text-3xl tracking-widest border-2 border-black dark:border-white px-8 py-2 mb-8 uppercase">
               Courses & Certifications
@@ -165,7 +226,7 @@ export default function About() {
                 {certificates.map((certificate) => (
                   <div
                     key={certificate.filename}
-                    className="border-2 border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-white dark:bg-gray-800 hover:border-gray-900 dark:hover:border-white transition-colors cursor-pointer"
+                    className="soft-card soft-card-hover overflow-hidden cursor-pointer"
                     onClick={() => setSelectedCertificate(certificate.filename)}
                   >
                     <div className="relative aspect-[4/3] w-full">
@@ -190,7 +251,6 @@ export default function About() {
         </div>
       </div>
 
-      {/* Certificate Modal */}
       {selectedCertificate && (
         <CertificateModal
           isOpen={!!selectedCertificate}

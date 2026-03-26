@@ -15,7 +15,6 @@ import {
   FaNetworkWired,
   FaServer,
   FaBrain,
-  FaBook,
 } from "react-icons/fa";
 import {
   SiMongodb,
@@ -93,7 +92,7 @@ export default function Skills() {
               {skillsData.programmingLanguages.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex flex-col items-center text-center p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors bg-white dark:bg-gray-800"
+                  className="soft-card soft-card-hover flex flex-col items-center text-center p-4"
                 >
                   <div className="text-gray-900 dark:text-white mb-2">
                     {skill.icon}
@@ -113,7 +112,7 @@ export default function Skills() {
               {skillsData.frontendBasics.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex flex-col items-center text-center p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors bg-white dark:bg-gray-800"
+                  className="soft-card soft-card-hover flex flex-col items-center text-center p-4"
                 >
                   <div className="text-gray-900 dark:text-white mb-2">
                     {skill.icon}
@@ -133,7 +132,7 @@ export default function Skills() {
               {skillsData.frameworksLibraries.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex flex-col items-center text-center p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors bg-white dark:bg-gray-800"
+                  className="soft-card soft-card-hover flex flex-col items-center text-center p-4"
                 >
                   <div className="text-gray-900 dark:text-white mb-2">
                     {skill.icon}
@@ -153,7 +152,7 @@ export default function Skills() {
               {skillsData.databases.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex flex-col items-center text-center p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors bg-white dark:bg-gray-800"
+                  className="soft-card soft-card-hover flex flex-col items-center text-center p-4"
                 >
                   <div className="text-gray-900 dark:text-white mb-2">
                     {skill.icon}
@@ -173,7 +172,7 @@ export default function Skills() {
               {skillsData.toolsPlatforms.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex flex-col items-center text-center p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors bg-white dark:bg-gray-800"
+                  className="soft-card soft-card-hover flex flex-col items-center text-center p-4"
                 >
                   <div className="text-gray-900 dark:text-white mb-2">
                     {skill.icon}
@@ -193,7 +192,7 @@ export default function Skills() {
               {skillsData.csFundamentals.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex flex-col items-center text-center p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-900 dark:hover:border-white transition-colors bg-white dark:bg-gray-800"
+                  className="soft-card soft-card-hover flex flex-col items-center text-center p-4"
                 >
                   <div className="text-gray-900 dark:text-white mb-2">
                     {skill.icon}

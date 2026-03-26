@@ -18,8 +18,39 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ritesh Kushwaha - Software Developer",
-  description: "Software Developer | MERN Stack Developer | Competitive Programmer",
+  metadataBase: new URL("https://riteshkushwaha-portfolio.vercel.app"),
+  title: {
+    default: "Ritesh Kushwaha | Software Developer",
+    template: "%s | Ritesh Kushwaha",
+  },
+  description: "Portfolio of Ritesh Kushwaha, a software developer focused on full-stack development, MERN applications, and competitive programming.",
+  keywords: [
+    "Ritesh Kushwaha",
+    "Software Developer",
+    "Full Stack Developer",
+    "MERN Developer",
+    "Next.js Portfolio",
+    "Competitive Programmer",
+  ],
+  authors: [{ name: "Ritesh Kushwaha" }],
+  creator: "Ritesh Kushwaha",
+  openGraph: {
+    title: "Ritesh Kushwaha | Software Developer",
+    description: "Full-stack developer portfolio featuring projects, skills, resume, and experience.",
+    url: "https://riteshkushwaha-portfolio.vercel.app",
+    siteName: "Ritesh Kushwaha Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ritesh Kushwaha | Software Developer",
+    description: "Full-stack developer portfolio featuring projects, skills, resume, and experience.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

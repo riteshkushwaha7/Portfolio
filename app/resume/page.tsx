@@ -7,12 +7,12 @@ export default function Resume() {
           <p className="text-lg text-gray-600 dark:text-gray-400">Software Developer</p>
         </header>
 
-        <div className="mb-10 relative mt-6 border-2 border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+        <div className="mb-10 relative mt-6 soft-card p-2 overflow-hidden">
           <iframe
             src="/assets/resume.pdf"
             width="100%"
             height="800px"
-            className="border-0 w-full h-[800px] sm:h-[900px] lg:h-[1000px]"
+            className="border-0 w-full h-[800px] sm:h-[900px] lg:h-[1000px] rounded-md"
             title="Ritesh's Resume"
           ></iframe>
         </div>
@@ -21,7 +21,7 @@ export default function Resume() {
           <a
             href="/assets/resume.pdf"
             download="Ritesh's resume.pdf"
-            className="inline-block px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-md hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors"
+            className="inline-block px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-md hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors shadow-sm"
           >
             Download Resume
           </a>
