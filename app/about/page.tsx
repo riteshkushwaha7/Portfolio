@@ -21,6 +21,11 @@ const certificates = [
 
 const achievements = [
   {
+    title: 'Fin-O-Hack Participant',
+    description: 'ASSETS – The Finance and Investment Society, DTU & Paytm | Apr 2026',
+    credential: 'https://app.truscholar.io/profile?credId=69de7e6ca0a1d70eaf36f611',
+  },
+  {
     title: 'Smart India Hackathon FINALIST',
     description: 'SIH 2025',
   },
@@ -33,6 +38,10 @@ const achievements = [
     description: 'Pupil Division, Max Rating: 1242',
   },
   {
+    title: 'CodeChef',
+    description: '2 Star, Max Rating: 1565',
+  },
+  {
     title: '3X Hackathon Finalist',
     description: 'Techkriti IIT Kanpur 2025, NIT KKR InnokShetra 2024, SIH 2025',
   },
@@ -42,24 +51,46 @@ const experience = [
   {
     role: 'Full Stack Developer Intern',
     company: 'BoostExpo',
-    duration: 'Mar 2026 - Present',
-    note: 'Expected till June 2026',
+    duration: 'Apr 2026 – Jun 2026',
     points: [
-      'Developing and maintaining boostexpo.com with focus on user experience and functionality.',
-      'Collaborating with the team to identify and fix bugs for a smoother cooking event booking process.',
-      'Gaining hands-on experience across both frontend and backend development.',
+      'Developed and maintained boostexpo.com with focus on user experience and functionality.',
+      'Collaborated with the team to identify and fix bugs for a smoother cooking event booking process.',
+      'Gained hands-on experience across both frontend and backend development.',
     ],
   },
   {
     role: 'ERPNext Technical Intern',
-    company: 'Scented Slogan',
-    duration: 'Feb 2026 - Present',
-    note: 'Expected till April 2026',
+    company: 'AGVS Enterprises',
+    duration: 'Feb 2026 – Apr 2026',
     points: [
-      'Managing the ERPNext platform by resolving bugs and feature issues.',
-      'Developing automation flows to streamline internal workflows and improve efficiency.',
-      'Contributing to maintenance of the company website built with low-code tools.',
+      'Managed the ERPNext platform by resolving bugs and feature issues.',
+      'Developed automation flows to streamline internal workflows and improve efficiency.',
+      'Contributed to maintenance of the company website built with low-code tools.',
     ],
+  },
+];
+
+const responsibilities = [
+  {
+    role: 'Executive Head',
+    organization: 'DoIT Coding Club — UIT RGPV',
+    duration: 'Sep 2024 – Jun 2026',
+    description:
+      'Led the organization of CodeAdept 9.0, mentored club members, and built a coding culture within the department.',
+  },
+  {
+    role: 'Secretary',
+    organization: 'ASPER — UIT RGPV',
+    duration: 'Nov 2025 – Jan 2026',
+    description:
+      'Supported departmental activities and coordinated student engagement initiatives.',
+  },
+  {
+    role: 'DSA Lead',
+    organization: 'Google Developer Groups on Campus — UIT RGPV',
+    duration: 'Sep 2025 – Dec 2025',
+    description:
+      'Led DSA sessions and workshops under the GDG chapter, mentoring students in competitive programming.',
   },
 ];
 
@@ -121,7 +152,6 @@ export default function About() {
                     </div>
                     <div className="text-sm text-gray-600 dark:text-gray-400 sm:text-right">
                       <p>{item.duration}</p>
-                      <p className="font-medium">{item.note}</p>
                     </div>
                   </div>
                   <ul className="mt-4 space-y-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -176,7 +206,7 @@ export default function About() {
               <div className="soft-card soft-card-hover p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
-                    Solved 900+ DSA Questions
+                    Solved 1000+ DSA Problems
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
                     Explore my DSA journey, coding profiles, and achievements in detail.
@@ -212,6 +242,50 @@ export default function About() {
                       {achievement.description}
                     </p>
                   )}
+                  {achievement.credential && (
+                    <a
+                      href={achievement.credential}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-block text-sm font-medium text-gray-900 underline underline-offset-4 dark:text-white"
+                    >
+                      Credential
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="inline-block font-bold text-black dark:text-white text-2xl md:text-3xl tracking-widest border-2 border-black dark:border-white px-8 py-2 mb-8 uppercase">
+              Positions of Responsibility
+            </h2>
+            <div className="max-w-3xl space-y-4">
+              {responsibilities.map((item) => (
+                <div
+                  key={`${item.role}-${item.organization}`}
+                  className="soft-card soft-card-hover p-4"
+                >
+                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                        {item.role}
+                      </h3>
+                      <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                        {item.organization}
+                      </p>
+                    </div>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 sm:text-right">
+                      {item.duration}
+                    </p>
+                  </div>
+                  <ul className="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <li className="flex gap-2">
+                      <span className="mt-1.5 h-2 w-2 rounded-full bg-gray-900 dark:bg-white" />
+                      <span>{item.description}</span>
+                    </li>
+                  </ul>
                 </div>
               ))}
             </div>

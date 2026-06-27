@@ -22,13 +22,18 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiNextdotjs,
+  SiFastapi,
+  SiGithub,
   SiGraphql,
   SiNginx,
   SiFirebase,
+  SiLangchain,
   SiPostgresql,
   SiCplusplus,
   SiJupyter,
+  SiPrisma,
   SiScikitlearn,
+  SiStreamlit,
 } from "react-icons/si";
 
 const skillsData = {
@@ -43,9 +48,12 @@ const skillsData = {
     { name: "Next.js", icon: <SiNextdotjs size={32} /> },
     { name: "Node.js", icon: <FaNodeJs size={32} /> },
     { name: "Express", icon: <SiExpress size={32} /> },
+    { name: "FastAPI", icon: <SiFastapi size={32} /> },
     { name: "Bootstrap", icon: <FaBootstrap size={32} /> },
     { name: "Tailwind CSS", icon: <SiTailwindcss size={32} /> },
     { name: "GraphQL", icon: <SiGraphql size={32} /> },
+    { name: "LangChain", icon: <SiLangchain size={32} /> },
+    { name: "Prisma", icon: <SiPrisma size={32} /> },
     { name: "scikit-learn", icon: <SiScikitlearn size={32} /> },
   ],
   databases: [
@@ -55,8 +63,10 @@ const skillsData = {
   ],
   toolsPlatforms: [
     { name: "Git", icon: <FaGitAlt size={32} /> },
+    { name: "GitHub", icon: <SiGithub size={32} /> },
     { name: "Nginx", icon: <SiNginx size={32} /> },
     { name: "Jupyter Notebook", icon: <SiJupyter size={32} /> },
+    { name: "Streamlit", icon: <SiStreamlit size={32} /> },
   ],
   csFundamentals: [
     { name: "DSA", icon: <FaProjectDiagram size={32} /> },
@@ -64,7 +74,10 @@ const skillsData = {
     { name: "DBMS", icon: <FaDatabase size={32} /> },
     { name: "CN", icon: <FaNetworkWired size={32} /> },
     { name: "OS", icon: <FaServer size={32} /> },
-    { name: "ML", icon: <FaBrain size={32} /> },
+    { name: "Machine Learning", icon: <FaBrain size={32} /> },
+    { name: "Deep Learning", icon: <FaBrain size={32} /> },
+    { name: "RAG", icon: <FaProjectDiagram size={32} /> },
+    { name: "Data Preprocessing", icon: <FaCode size={32} /> },
   ],
   frontendBasics: [
     { name: "HTML5", icon: <FaHtml5 size={32} /> },

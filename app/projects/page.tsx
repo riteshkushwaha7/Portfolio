@@ -1,5 +1,35 @@
 const projectsData = [
   {
+    id: 8,
+    demoLink: "https://gridmind-umber.vercel.app/",
+    githubRepo: "https://github.com/riteshkushwaha7/Gridmind",
+    title: "GRIDMIND",
+    dateRange: "Apr 2026 – May 2026",
+    features:
+      "100% vibe-coded AI-powered EV charging optimization hackathon project for grid operators, with microservices, LSTM demand forecasting, PPO reinforcement learning scheduling, and K-Means/DBSCAN clustering.",
+    technologies: ["Next.js", "FastAPI", "PyTorch", "LSTM", "PPO RL", "InfluxDB", "Redis", "PostgreSQL", "MLflow"],
+  },
+  {
+    id: 7,
+    demoLink: "https://stoqintelli.streamlit.app/",
+    githubRepo: "https://github.com/riteshkushwaha7/StoqIntelli",
+    title: "StoqIntelli",
+    dateRange: "May 2026",
+    features:
+      "60 percent vibe-coded AI-powered NSE stock forecasting tool with a resilient LSTM pipeline, multi-timeframe predictions, 8 pre-trained stock models, confidence/direction metadata, and live Yahoo Finance ingestion.",
+    technologies: ["Python", "Streamlit", "PyTorch", "LSTM", "yfinance", "scikit-learn", "Pandas", "NumPy"],
+  },
+  {
+    id: 6,
+    demoLink: "https://air-cast.vercel.app/",
+    githubRepo: "https://github.com/riteshkushwaha7/AirCast",
+    title: "AirWise",
+    dateRange: "Feb 2026 – May 2026",
+    features:
+      "6th semester minor project: an AWS-deployed AQI forecasting platform with 1d/2d/3d/7d predictions, health-based recommendations, alert preferences, activity planner, and stable mock demo mode.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React Native", "Expo", "FastAPI", "PostgreSQL", "InfluxDB", "LSTM"],
+  },
+  {
     id: 4,
     demoLink: null,
     githubRepo: "https://github.com/riteshkushwaha7/herblink",

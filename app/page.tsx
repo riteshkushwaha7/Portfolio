@@ -36,8 +36,8 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <span className="soft-card px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200">2 Current Internships</span>
-              <span className="soft-card px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200">900+ DSA Problems</span>
+              <span className="soft-card px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200">2 Internships Completed</span>
+              <span className="soft-card px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200">1000+ DSA Problems</span>
               <span className="soft-card px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200">Graduating 2027</span>
             </div>
 
