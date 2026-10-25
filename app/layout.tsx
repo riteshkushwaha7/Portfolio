@@ -1,29 +1,32 @@
-import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ThemeProvider from "@/components/ThemeProvider";
+import { site } from "@/lib/site";
 
-const inter = Inter({
+const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600"],
+  variable: "--font-plex-sans",
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
+  weight: ["400", "500", "600"],
+  variable: "--font-plex-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://riteshkushwaha-portfolio.vercel.app"),
+  metadataBase: new URL(site.url),
   title: {
     default: "Ritesh Kushwaha | Software Developer",
     template: "%s | Ritesh Kushwaha",
   },
-  description: "Portfolio of Ritesh Kushwaha, a software developer focused on full-stack development, MERN applications, and competitive programming.",
+  description: site.description,
   keywords: [
     "Ritesh Kushwaha",
     "Software Developer",
@@ -31,26 +34,41 @@ export const metadata: Metadata = {
     "MERN Developer",
     "Next.js Portfolio",
     "Competitive Programmer",
+    "Machine Learning Developer",
+    "Ritesh Kushwaha Portfolio",
+    "UIT RGPV Developer",
   ],
   authors: [{ name: "Ritesh Kushwaha" }],
   creator: "Ritesh Kushwaha",
   openGraph: {
     title: "Ritesh Kushwaha | Software Developer",
-    description: "Full-stack developer portfolio featuring projects, skills, resume, and experience.",
-    url: "https://riteshkushwaha-portfolio.vercel.app",
+    description: site.description,
+    url: site.url,
     siteName: "Ritesh Kushwaha Portfolio",
     locale: "en_US",
     type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Ritesh Kushwaha - Software Engineer" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Ritesh Kushwaha | Software Developer",
-    description: "Full-stack developer portfolio featuring projects, skills, resume, and experience.",
+    description: site.description,
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
   },
+  alternates: { canonical: "/" },
+  category: "technology",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#0d1525",
 };
 
 export default function RootLayout({
@@ -59,11 +77,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${plexSans.variable} ${plexMono.variable} dark`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme');document.documentElement.classList.toggle('dark',t?t==='dark':true)}catch(e){}})()` }} />
+      </head>
       <body className="antialiased">
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <ThemeProvider>
           <Navbar />
-          <main className="min-h-screen">{children}</main>
+          <main id="main-content" className="min-h-screen">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

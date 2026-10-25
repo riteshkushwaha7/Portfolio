@@ -17,25 +17,33 @@ export default function CertificateModal({ isOpen, onClose, imageSrc, name }: Ce
     } else {
       document.body.style.overflow = 'unset';
     }
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.body.style.overflow = 'unset';
+      document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 dark:bg-opacity-90 p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="certificate-title"
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 p-4"
       onClick={onClose}
     >
       <div
-        className="relative max-w-4xl w-full max-h-[90vh] bg-white dark:bg-gray-900 rounded-lg overflow-hidden"
+        className="panel relative max-h-[90vh] w-full max-w-4xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors"
+          className="absolute right-4 top-4 z-10 grid h-10 w-10 place-items-center border bg-[var(--background)] text-xl"
           aria-label="Close modal"
         >
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,7 +51,7 @@ export default function CertificateModal({ isOpen, onClose, imageSrc, name }: Ce
           </svg>
         </button>
         <div className="p-4">
-          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 text-center">
+          <h3 id="certificate-title" className="mb-4 pr-12 text-center text-lg font-semibold">
             {name}
           </h3>
           <div className="relative w-full h-auto max-h-[70vh] overflow-auto">

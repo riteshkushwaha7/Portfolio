@@ -1,69 +1,8 @@
-const email = 'riteshkushwaha497@gmail.com';
+import PageHeader from "@/components/PageHeader";
+import { site } from "@/lib/site";
 
-const subject = 'Portfolio Contact';
-const body = `Hi Ritesh,
-
-I visited your portfolio and would like to connect.`;
-
-const emailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-const contactLinks = [
-  {
-    label: 'Email',
-    value: email,
-    href: emailLink,
-  },
-  {
-    label: 'LinkedIn',
-    value: 'linkedin.com/in/riteshkushwaha7',
-    href: 'https://www.linkedin.com/in/riteshkushwaha7/',
-  },
-  {
-    label: 'GitHub',
-    value: 'github.com/riteshkushwaha7',
-    href: 'https://github.com/riteshkushwaha7',
-  },
-  {
-    label: 'X',
-    value: 'x.com/cyberrk_',
-    href: 'https://x.com/cyberrk_',
-  },
-];
+const links=[{label:"Email",value:site.email,href:`mailto:${site.email}?subject=Portfolio%20Contact`},{label:"LinkedIn",value:"linkedin.com/in/riteshkushwaha7",href:site.linkedin},{label:"GitHub",value:"github.com/riteshkushwaha7",href:site.github},{label:"X",value:"x.com/cyberrk_",href:site.x}];
 
 export default function Contact() {
-  return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 pt-16">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="space-y-10">
-          <section>
-            <h2 className="inline-block font-bold text-black dark:text-white text-2xl md:text-3xl tracking-widest border-2 border-black dark:border-white px-8 py-2 mb-8 uppercase">
-              Contact
-            </h2>
-            <p className="max-w-2xl text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              Open to internships, full-stack work, ML projects, hackathon collaborations, and technical conversations.
-            </p>
-          </section>
-
-          <section className="max-w-3xl space-y-4">
-            {contactLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith('http') ? '_blank' : undefined}
-                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="soft-card soft-card-hover flex flex-col gap-1 p-4 sm:flex-row sm:items-center sm:justify-between"
-              >
-                <span className="text-lg font-bold text-gray-900 dark:text-white">
-                  {link.label}
-                </span>
-                <span className="text-sm text-gray-600 dark:text-gray-400 sm:text-right">
-                  {link.value}
-                </span>
-              </a>
-            ))}
-          </section>
-        </div>
-      </div>
-    </div>
-  );
+  return <div className="page-shell"><PageHeader eyebrow="Contact" title="Let’s talk about the work." description="I’m open to software engineering internships, full-stack and machine-learning projects, hackathon collaborations, and thoughtful technical conversations." /><section className="grid gap-10 border-y py-10 lg:grid-cols-[.7fr_1.3fr]"><div><p className="eyebrow">Best way to reach me</p><a className="mt-4 block break-all text-xl font-semibold hover:text-[var(--accent)]" href={`mailto:${site.email}`}>{site.email}</a><p className="muted mt-5 max-w-sm text-sm leading-6">Based in Bhopal, India. I usually reply with the context and availability needed to move a conversation forward.</p></div><div className="divide-y border-t">{links.map(link=><a key={link.label} href={link.href} target={link.href.startsWith("http")?"_blank":undefined} rel={link.href.startsWith("http")?"noopener noreferrer":undefined} className="group grid gap-2 py-5 sm:grid-cols-[8rem_1fr_auto] sm:items-center"><span className="muted font-mono text-xs uppercase tracking-wider">{link.label}</span><span className="font-medium">{link.value}</span><span className="transition group-hover:translate-x-1" aria-hidden="true">↗</span></a>)}</div></section></div>;
 }

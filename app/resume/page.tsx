@@ -1,33 +1,8 @@
+import PageHeader from "@/components/PageHeader";
+
 export default function Resume() {
-  return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 pt-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <header className="text-center mb-10">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">Ritesh Kushwaha</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400">Software Developer</p>
-        </header>
-
-        <div className="mb-10 relative mt-6 soft-card p-2 overflow-hidden">
-          <iframe
-            src="/assets/resume.pdf"
-            width="100%"
-            height="800px"
-            className="border-0 w-full h-[800px] sm:h-[900px] lg:h-[1000px] rounded-md"
-            title="Ritesh's Resume"
-          ></iframe>
-        </div>
-
-        <div className="text-center mt-10">
-          <a
-            href="/assets/resume.pdf"
-            download="Ritesh's resume.pdf"
-            className="inline-block px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-md hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors shadow-sm"
-          >
-            Download Resume
-          </a>
-        </div>
-      </div>
-    </div>
-  );
+  return <div className="page-shell">
+    <div className="flex flex-col justify-between gap-7 sm:flex-row sm:items-end"><PageHeader eyebrow="Résumé" title="Experience, projects, and technical work." description="View the current one-page résumé below or download a copy for offline review." /><a href="/assets/resume.pdf" download="Ritesh_Kushwaha_Resume.pdf" className="button-primary mb-14 shrink-0">Download PDF ↓</a></div>
+    <section className="panel overflow-hidden" aria-label="Resume preview"><object data="/assets/resume.pdf#view=FitH" type="application/pdf" className="h-[75vh] min-h-[700px] w-full"><div className="p-10 text-center"><p className="muted">Your browser cannot display the PDF preview.</p><a href="/assets/resume.pdf" className="text-link mt-4">Open the résumé directly ↗</a></div></object></section>
+  </div>;
 }
-

@@ -2,67 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #000000;
-  --font-inter: 'Inter', sans-serif;
-  --font-jetbrains-mono: 'JetBrains Mono', monospace;
+:root { --background:#f7f8fa; --surface:#fff; --surface-raised:#edf1f5; --foreground:#111827; --muted:#5b6575; --border:#d8dee8; --accent:#0d9488; --accent-soft:#d8faf5; --nav:rgba(247,248,250,.92); }
+.dark { --background:#0d1525; --surface:#131e31; --surface-raised:#19263b; --foreground:#f4f7fb; --muted:#9dabc0; --border:#2a3950; --accent:#5eead4; --accent-soft:#143838; --nav:rgba(13,21,37,.92); }
+* { border-color:var(--border); }
+html { scroll-behavior:smooth; }
+body { min-height:100vh; color:var(--foreground); background:var(--background); font-family:var(--font-plex-sans),sans-serif; text-rendering:optimizeLegibility; }
+::selection { color:#07111d; background:var(--accent); }
+a,button { -webkit-tap-highlight-color:transparent; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+.skip-link { position:fixed; left:1rem; top:-5rem; z-index:100; padding:.75rem 1rem; color:var(--background); background:var(--foreground); }
+.skip-link:focus { top:1rem; }
+
+@layer components {
+  .page-shell { @apply mx-auto w-full max-w-6xl px-5 pb-24 pt-28 sm:px-8 lg:px-10; }
+  .page-header { @apply mb-12 max-w-3xl; }
+  .page-header h1 { @apply mt-4 text-3xl font-semibold tracking-[-0.025em] sm:text-4xl; }
+  .page-header > p:last-child { @apply mt-5 max-w-2xl text-base leading-7 sm:text-lg; color:var(--muted); }
+  .eyebrow { @apply font-mono text-xs font-semibold uppercase tracking-[0.2em]; color:var(--accent); }
+  .section-title { @apply text-2xl font-semibold tracking-[-0.025em] sm:text-[2rem]; }
+  .muted { color:var(--muted); }
+  .panel { background:var(--surface); border:1px solid var(--border); }
+  .button-primary { @apply inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold transition; color:#07111d; background:var(--accent); }
+  .button-primary:hover { filter:brightness(1.08); transform:translateY(-1px); }
+  .button-secondary { @apply inline-flex items-center justify-center rounded-md border px-5 py-3 text-sm font-semibold transition; color:var(--foreground); }
+  .button-secondary:hover { background:var(--surface-raised); border-color:var(--accent); }
+  .text-link { @apply inline-flex items-center gap-1 text-sm font-semibold underline decoration-transparent underline-offset-4 transition; color:var(--foreground); }
+  .text-link:hover { color:var(--accent); text-decoration-color:var(--accent); }
+  .tag { @apply inline-flex rounded-sm border px-2 py-1 font-mono text-[11px] leading-none; color:var(--muted); background:var(--surface-raised); }
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #000000;
-  }
+.soft-card { background:var(--surface); border:1px solid var(--border); }
+.soft-card-hover { transition:border-color .2s ease,transform .2s ease,background-color .2s ease; }
+.soft-card-hover:hover { border-color:var(--accent); transform:translateY(-2px); }
+.chess-panel { position:relative; isolation:isolate; overflow:hidden; }
+.chess-panel::before {
+  content:""; position:absolute; inset:0; z-index:-1;
+  background-image:conic-gradient(from 90deg,rgba(94,234,212,.055) 25%,transparent 0 50%,rgba(94,234,212,.055) 0 75%,transparent 0);
+  background-size:64px 64px;
+  mask-image:linear-gradient(135deg,black,transparent 88%);
+  pointer-events:none;
 }
-
-body {
-  color: var(--foreground);
-  background:
-    radial-gradient(circle at top center, rgba(229, 231, 235, 0.55), transparent 35%),
-    var(--background);
-  font-family: var(--font-inter);
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-in;
-  }
-  
-  .animate-slide-up {
-    animation: slideUp 0.6s ease-out;
-  }
-
-  .soft-card {
-    @apply rounded-xl border border-gray-200/80 bg-white shadow-sm transition-all dark:border-gray-700 dark:bg-gray-800;
-  }
-
-  .soft-card-hover {
-    @apply hover:-translate-y-0.5 hover:shadow-md;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+.dark .chess-panel::before { opacity:.72; }
+@media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto} *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important} }
